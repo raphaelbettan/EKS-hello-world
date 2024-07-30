@@ -13,11 +13,7 @@ ingress:
   enabled: true
   annotations:
     alb.ingress.kubernetes.io/healthcheck-path: /
-    alb.ingress.kubernetes.io/scheme: internal
+    alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
     alb.ingress.kubernetes.io/inbound-cidrs: 0.0.0.0/0
-
-# alb.ingress.kubernetes.io/ip-address-type: dualstack
-# host: hello-world.jifiti.com
-  
