@@ -1,0 +1,21 @@
+replicaCount: 1
+
+image:
+  repository: crccheck/hello-world
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 8000
+
+ingress:
+  enabled: true
+  annotations:
+    alb.ingress.kubernetes.io/healthcheck-path: /
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/inbound-cidrs: 0.0.0.0/0
+  # host: hello-world.jifiti.com
+  

@@ -1,1 +1,8 @@
 creds.txt
+
+# TERRAFORM
+.terraform
+.terraform.lock.hcl
+.terraform.tfstate
+tf.plan
+tfplan.txt
