@@ -167,7 +167,16 @@ If you encounter issues:
 
 For further assistance, please open an issue in the repository.
 
-IF Modules not working,
+IF Modules not working, check IAM Role Policies in AWS IAM Console.
+Possibly, you need to add below policy to IAM Role.
+
+```sh
+# REPLACE WITH workers-eks-node-group Role Name
+cd policies/
+aws iam put-role-policy --role-name <workers-eks-node-group> --policy-name EKSWorkerNodeEC2FullPolicy --policy-document file://EKS_NG_EC2_FULL.json
+aws iam put-role-policy --role-name <workers-eks-node-group> --policy-name EKSWorkerNodeALBFullPolicy --policy-document file://EKS_NG_ALB_FULL.json
+```
+
 then run below commands:
 
 - `hello-world (Multi Tenant)`:

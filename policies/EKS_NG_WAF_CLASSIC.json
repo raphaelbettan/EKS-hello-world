@@ -1,0 +1,17 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "waf-regional:GetWebACLForResource",
+                "waf-regional:ListWebACLs",
+                "waf-regional:GetWebACL",
+                "waf-regional:ListResourcesForWebACL",
+                "waf-regional:AssociateWebACL",
+                "waf-regional:DisassociateWebACL"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
